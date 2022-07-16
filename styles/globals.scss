@@ -1,0 +1,90 @@
+@import url('https://store.cloudflare.steamstatic.com/public/shared/css/motiva_sans.css?v=2C1Oh9QFVTyK&l=vietnamese&_cdn=cloudflare');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* @layer base {
+  html {
+    font-family: 'Motiva Sans';
+  }
+} */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.slick-slide > div > div{
+  display: block!important;
+  position: relative;
+}
+
+.slick-dots{
+  bottom: 0px!important;
+}
+
+.slick-dots li button:before{
+  color: white!important;
+}
+
+.slick-list{
+  border-radius: 0.75rem;
+}
+
+.slick-prev{
+  left: 20px!important;
+}
+
+.slick-next{
+  right: 20px!important;
+}
+
+.slick-prev, .slick-next{
+  z-index: 1!important;
+}
+
+.splide__track--nav>.splide__list>.splide__slide.is-active{
+  border: 1px solid #3b82f6!important;
+}
+
+.splide{
+  margin-bottom: 15px;
+}
+
+.splide__slide img{
+  height: 100%;
+}
+
+.cart-animation{
+  &-enter{
+    opacity: 0;
+  }
+
+  &-active{
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+
+  &-exit{
+    opacity: 1;
+  }
+
+  &-exit-active{
+    opacity: 0;
+    transition: opacity 200ms;
+  }
+}
