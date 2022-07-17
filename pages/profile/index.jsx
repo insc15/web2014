@@ -31,6 +31,12 @@ export async function getServerSideProps(context) {
                         permanent: true,
                     }
                 }
+            }else{
+                return {
+                    props: {
+                        userData:base64.decode(cookies.lg)
+                    },
+                };
             }
         }else{
             return{
@@ -48,13 +54,6 @@ export async function getServerSideProps(context) {
             }
         }
     }
-    
-
-    return {
-        props: {
-            userData:base64.decode(cookies.lg)
-        },
-    };
   }
 
 function Profile({userData}) {

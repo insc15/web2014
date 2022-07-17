@@ -13,15 +13,8 @@ export async function getServerSideProps(context) {
                 }
             }
         }
-    }else{
-        return{
-            redirect: {
-                destination: '/',
-                permanent: true,
-            }
-        }
     }
-
+    
     return {
         props: {},
     };
