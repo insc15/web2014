@@ -9,6 +9,15 @@ import DashboardProduct from "./product";
 import { useState } from "react";
 
 export async function getServerSideProps(context) {
+    const redirect = () => {
+        return{
+            redirect: {
+                destination: '/',
+                permanent: true,
+            }
+        }
+    }
+
     if(context.req.headers.cookie) 
     {
         const cookies = cookiesParser(context.req.headers.cookie);
@@ -31,14 +40,7 @@ export async function getServerSideProps(context) {
         redirect()
     }
 
-    const redirect = () => {
-        return{
-            redirect: {
-                destination: '/',
-                permanent: true,
-            }
-        }
-    }
+    
 
     
 
@@ -89,7 +91,7 @@ export default function Dashboard() {
             <section className="basis-4/5 py-16 px-10 h-screen">
                 {
                     tabs.map((TabElement,i) => {
-                        if(i === currentTab) return <TabElement.component/>
+                        if(i === currentTab) return <TabElement.component key={i}/>
                     })
                 }
             </section>
