@@ -1,1 +1,1 @@
-export const Domain = 'http://api.welgames.me/'
+export const Domain = 'https://api.welgames.me/'
