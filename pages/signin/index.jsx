@@ -3,14 +3,14 @@ import { cookiesParser } from "../../Utils/CookiesParser";
 
 export async function getServerSideProps(context) {
 //     const cookies = cookiesParser(context.req.headers.cookie);
-//     if(cookies.lg){
-//         return{
-//             redirect: {
-//                 destination: '/',
-//                 permanent: true,
-//             }
-//         }
-//     }
+    if(cookies.lg){
+        return{
+            redirect: {
+                destination: '/',
+                permanent: true,
+            }
+        }
+    }
 
     return {
         props: {},
