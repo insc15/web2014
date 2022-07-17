@@ -9,6 +9,28 @@ import DashboardProduct from "./product";
 import { useState } from "react";
 
 export async function getServerSideProps(context) {
+    if(context.req.headers.cookie) 
+    {
+        const cookies = cookiesParser(context.req.headers.cookie);
+        if(cookies.lg){
+            const userDataObj = JSON.parse(base64.decode(cookies.lg))
+
+            if(userDataObj.isAdmin == 1){
+                const response = await Login(userDataObj.username, base64.decode(userDataObj.password))
+                if(response.status !== "success"){
+                    redirect()
+                }
+            }else{
+                redirect()
+            }
+            
+        }else{
+            redirect()
+        }
+    }else{
+        redirect()
+    }
+
     const redirect = () => {
         return{
             redirect: {
@@ -18,22 +40,7 @@ export async function getServerSideProps(context) {
         }
     }
 
-    const cookies = cookiesParser(context.req.headers.cookie);
-    if(cookies.lg){
-        const userDataObj = JSON.parse(base64.decode(cookies.lg))
-
-        if(userDataObj.isAdmin == 1){
-            const response = await Login(userDataObj.username, base64.decode(userDataObj.password))
-            if(response.status !== "success"){
-                redirect()
-            }
-        }else{
-            redirect()
-        }
-        
-    }else{
-        redirect()
-    }
+    
 
     return {
         props: {},

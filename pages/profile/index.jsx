@@ -18,11 +18,21 @@ import Alert from '@mui/material/Alert';
 import Grow from '@mui/material/Grow';
 
 export async function getServerSideProps(context) {
-    const cookies = cookiesParser(context.req.headers.cookie);
-    if(cookies.lg){
-        const userDataObj = JSON.parse(base64.decode(cookies.lg))
-        const response = await Login(userDataObj.username, base64.decode(userDataObj.password))
-        if(response.status !== "success"){
+    if(context.req.headers.cookie) 
+    {
+        const cookies = cookiesParser(context.req.headers.cookie);
+        if(cookies.lg){
+            const userDataObj = JSON.parse(base64.decode(cookies.lg))
+            const response = await Login(userDataObj.username, base64.decode(userDataObj.password))
+            if(response.status !== "success"){
+                return{
+                    redirect: {
+                        destination: '/',
+                        permanent: true,
+                    }
+                }
+            }
+        }else{
             return{
                 redirect: {
                     destination: '/',
@@ -38,6 +48,7 @@ export async function getServerSideProps(context) {
             }
         }
     }
+    
 
     return {
         props: {
