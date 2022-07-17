@@ -52,7 +52,7 @@ function StoreApp({ Component, pageProps }) {
     // if (adBlockDetected) {
     //   setAdBlockState(true)
     // }
-    console.clear()
+//     console.clear()
     console.log(`%c ${art}`, 'font-weight: bold; color: #3b82f6;')
     console.log('%cBug Defender!', 'font-weight: bold; font-size: 50px;color: red; padding: 1% 0');
     console.log('Author: %chttps://www.facebook.com/insc15','font-weight: bold; color: #3b82f6;')
