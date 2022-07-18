@@ -9,7 +9,7 @@ import { GetAllProduct } from "../Utils/FetchAPI/Product"
 
 export const getServerSideProps = async () =>{
   const product = await GetAllProduct()
-  console.log(product)
+  // console.log(product)
 
   const data = FeaturedCategories
 
