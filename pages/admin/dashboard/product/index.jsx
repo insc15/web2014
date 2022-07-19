@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import DashboardSideBar from '../../../../components/DashboardSideBar';
 import { WhiteLayout } from '../../../../components/Layout';
 import { GetAllProduct } from '../../../../Utils/FetchAPI/Product';
-import serverAdminAuth from '../../../../Utils/AdminTool/serverAdminAuth';
+import serverAdminAuth from '../../../../Utils/AdminTool/ServerAdminAuth';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import AddIcon from '@mui/icons-material/Add';

@@ -1,5 +1,5 @@
 import { WhiteLayout } from "../../../components/Layout"
-import serverAdminAuth from "../../../Utils/AdminTool/serverAdminAuth"
+import serverAdminAuth from "../../../Utils/AdminTool/ServerAdminAuth"
 
 export async function getServerSideProps(context) {
     if(serverAdminAuth(context)){

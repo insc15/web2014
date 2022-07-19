@@ -1,5 +1,5 @@
 import { WhiteLayout } from "../../../../components/Layout"
-import serverAdminAuth from "../../../../Utils/AdminTool/serverAdminAuth"
+import serverAdminAuth from "../../../../Utils/AdminTool/ServerAdminAuth"
 import DashboardSideBar from '../../../../components/DashboardSideBar';
 import { TextField } from "@mui/material";
 import RichTextEditor from "../../../../components/CKEditor";
