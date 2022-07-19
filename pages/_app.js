@@ -3,7 +3,7 @@ import '../styles/globals.scss'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { NextSeo } from 'next-seo'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Script from 'next/script'
 import { useRouter } from 'next/router'
 import { useDetectAdBlock } from "adblock-detect-react";
@@ -98,6 +98,7 @@ function StoreApp({ Component, pageProps }) {
   }, [router.events])
 
   return (
+    <React.StrictMode>
     <Provider store={store}>
       {
         adBlockDetected && <DialogModal isOpen={adBlockDetected}/>
@@ -165,6 +166,7 @@ function StoreApp({ Component, pageProps }) {
         </StyledEngineProvider>
       </Layout>
     </Provider>
+    </React.StrictMode>
   )
 }
 
