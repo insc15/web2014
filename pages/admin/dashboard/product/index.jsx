@@ -10,11 +10,12 @@ import { styled } from '@mui/material/styles';
 import AddIcon from '@mui/icons-material/Add';
 import currencyFormatter from "currency-formatter"
 import Link from 'next/link';
+import { GetAllGenre } from '../../../../Utils/FetchAPI/Genre';
 
 export async function getServerSideProps(context) {
     if(serverAdminAuth(context)){
         return{
-            props: {}
+            props: { }
         }
     }else{
         return{
@@ -96,7 +97,7 @@ export default function DashboardProduct() {
             <DashboardSideBar/>
             <section className="basis-4/5 py-16 px-10 min-h-screen">
                 <h3 className="font-semibold text-3xl leading-10">Sản phẩm</h3>
-                <div className='mt-12' style={{ height: 400, width: '100%' }}>
+                <div className='mt-12'>
                     <Link href={'product/new'}>
                         <Button variant="contained" className="shadow-none border-none hover:border-none ml-auto hover:bg-left bg-right text-white bg-blue-500 rounded mb-5 py-2 px-5"><AddIcon/>Tạo mới</Button>
                     </Link>
@@ -112,6 +113,7 @@ export default function DashboardProduct() {
                         rowsPerPageOptions={[product.length]}
                         disableSelectionOnClick
                         className='bg-white shadow-lg'
+                        style={{ height: 400, width: '100%' }}
                     />
                 </div>
             </section>

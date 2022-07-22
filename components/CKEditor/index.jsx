@@ -1,9 +1,27 @@
-import dynamic from 'next/dynamic';
+import React, { useState, useRef, useEffect } from "react";
+import JoditEditor from "./jodit";
 
-export default dynamic(() => import('@mantine/rte'), {
-  // Disable during server side rendering
-  ssr: false,
+export default function Editor({height}) {
+  const editor = useRef(null);
+  const [content, setContent] = useState("Start writing");
+  const config = {
+    readonly: false,
+    height: height || 400
+  };
 
-  // Render anything as fallback on server, e.g. loader or html content without editor
-  loading: () => null,
-});
+  useEffect(()=>{
+    console.log(content)
+  },[content])
+
+  return (
+    <div className="App">
+      <JoditEditor
+        ref={editor}
+        value={content}
+        config={config}
+        onBlur={(newContent) => {setContent(newContent)}}
+        onChange={(newContent) => {}}
+      />
+    </div>
+  );
+}

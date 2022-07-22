@@ -12,7 +12,7 @@ export default function News() {
 
     return (
         <div className="max-w-screen-xl px-3 my-3 mx-auto">
-            <NextSeo
+            {/* <NextSeo
                 title={`Tin tức`}
                 description={`Tin tức mới nhất từ Welgames`}
                 openGraph={{
@@ -27,7 +27,7 @@ export default function News() {
                     ],
                     site_name: 'Welgames',
                 }}
-            />
+            /> */}
             <h1 className="font-bold text-2xl m-2 text-blue-500 lg:my-5 border-solid border-b-2 border-blue-500 pb-2">Tin tức mới</h1>
             <div className="grid sm:grid-cols-5 px-2 gap-5">
                 <Link href={`/news/item/${NewsListSorted[0].id}`}>
@@ -40,7 +40,7 @@ export default function News() {
                 </div>
                 </Link>
                 <Link href={`/news/item/${NewsListSorted[0].id}`}>
-                <div className="col-span-3 sm:col-span-2 group relative rounded-xl overflow-hidden cursor-pointer">
+                <div className="col-span-3 row-span-1 sm:col-span-2 group relative rounded-xl overflow-hidden cursor-pointer">
                     <img className='w-full object-cover h-full group-hover:scale-105 duration-300 transition-all pointer-events-none' src={NewsListSorted[1].preview_image} />
                     <div className='absolute bottom-0 p-5 lg:p-10 w-full text-white font-bold bg-gradient-to-t from-black bg-opacity-40'>
                         <h2 className='text-sm lg:text-2xl uppercase border-b border-solid border-transparent group-hover:border-white transition-all w-fit'>{NewsListSorted[1].title}</h2>
@@ -49,7 +49,7 @@ export default function News() {
                 </div>
                 </Link>
                 <Link href={`/news/item/${NewsListSorted[0].id}`}>
-                <div className="col-span-3 sm:col-span-2 group relative rounded-xl overflow-hidden cursor-pointer">
+                <div className="col-span-3 row-span-1 sm:col-span-2 group relative rounded-xl overflow-hidden cursor-pointer">
                     <img className='w-full object-cover h-full group-hover:scale-105 duration-300 transition-all pointer-events-none' src={NewsListSorted[2].preview_image} />
                     <div className='absolute bottom-0 p-5 lg:p-10 w-full text-white font-bold bg-gradient-to-t from-black bg-opacity-40'>
                         <h2 className='text-sm lg:text-2xl uppercase border-b border-solid border-transparent group-hover:border-white transition-all w-fit'>{NewsListSorted[2].title}</h2>

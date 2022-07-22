@@ -79,7 +79,7 @@ export default function DashboardProduct() {
             <DashboardSideBar/>
             <section className="basis-4/5 py-16 px-10 min-h-screen">
                 <h3 className="font-semibold text-3xl leading-10">Product</h3>
-                <div className='mt-12' style={{ height: 400, width: '100%' }}>
+                <div className='mt-12'>
                     <Button variant="contained" className="shadow-none border-none hover:border-none ml-auto hover:bg-left bg-right text-white bg-blue-500 rounded mb-5 py-2 px-5"><AddIcon/>Tạo mới</Button>
 
                     <StyledDataGrid

@@ -6,9 +6,10 @@ import { WindowIcon, AppleIcon } from "../components/Icon"
 import FeaturedCategories from '../Utils/featuredcategories.json'
 import GameList from '../Utils/allgames.json'
 import { GetAllProduct } from "../Utils/FetchAPI/Product"
+import News from "./news"
 
 export const getServerSideProps = async () =>{
-  const product = await GetAllProduct()
+  // const product = await GetAllProduct()
   // console.log(product)
 
   const data = FeaturedCategories
@@ -91,6 +92,7 @@ export default function Home({ featureGameData, allGameData }) {
         <List data={featureGameData.coming_soon}></List>
         <List data={featureGameData.new_releases}></List>
         <List name={"Tất cả"} data={allGameData}></List>
+        <News/>
       </div>
     </>
   )

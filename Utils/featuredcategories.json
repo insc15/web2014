@@ -457,14 +457,14 @@
   },
   "top_sellers": {
     "id": "cat_topsellers",
-    "name": "Bán chạy",
+    "name": "Đang giảm giá",
     "items": [
       {
         "id": 1889490,
         "type": 0,
         "name": "Stellaris: Overlord",
         "discounted": false,
-        "discount_percent": 0,
+        "discount_percent": 20,
         "original_price": 24400000,
         "final_price": 24400000,
         "currency": "VND",
@@ -499,7 +499,7 @@
         "type": 0,
         "name": "ELDEN RING",
         "discounted": false,
-        "discount_percent": 0,
+        "discount_percent": 50,
         "original_price": 80000000,
         "final_price": 80000000,
         "currency": "VND",

@@ -98,7 +98,7 @@ function StoreApp({ Component, pageProps }) {
   }, [router.events])
 
   return (
-    <React.StrictMode>
+    // <React.StrictMode>
     <Provider store={store}>
       {
         adBlockDetected && <DialogModal isOpen={adBlockDetected}/>
@@ -166,7 +166,7 @@ function StoreApp({ Component, pageProps }) {
         </StyledEngineProvider>
       </Layout>
     </Provider>
-    </React.StrictMode>
+    // </React.StrictMode>
   )
 }
 
